@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://mmfmd7wv4tgq"]
+
+[ext_resource type="Script" uid="uid://bag5x5fpl14n" path="res://gameplay/collectibles_respawn/collectibles_respawn.gd" id="1_mev23"]
+
+[node name="collectibles_respawn" type="Node2D"]
+script = ExtResource("1_mev23")
+
+[node name="left_pos" type="Marker2D" parent="."]
+position = Vector2(48, 0)
+
+[node name="right_pos" type="Marker2D" parent="."]
+position = Vector2(488, 0)
+
+[node name="timer" type="Timer" parent="."]
+autostart = true
+
+[node name="collectibles" type="Node2D" parent="."]
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

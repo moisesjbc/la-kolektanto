@@ -10,7 +10,10 @@ func _process(delta: float) -> void:
 	elif Input.is_action_pressed("ui_right"):
 		direction.x = 1
 
-	move_and_collide(direction * SPEED * delta)
+	var collision: KinematicCollision2D = move_and_collide(direction * SPEED * delta)
+	if collision and collision.get_collider().is_in_group("collectibles"):
+		collect(collision.get_collider().TYPE)
+		collision.get_collider().queue_free()
 
 func collect(collectible_type: String) -> void:
 	print("Collected: " + collectible_type)

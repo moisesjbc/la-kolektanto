@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfqavponjhjfh"]
 
 [ext_resource type="PackedScene" uid="uid://ba4kaciikq8ru" path="res://gameplay/player/player.tscn" id="1_582jy"]
-[ext_resource type="PackedScene" uid="uid://cyl8ir53xd7vb" path="res://gameplay/collectible/collectible.tscn" id="2_c201j"]
+[ext_resource type="PackedScene" uid="uid://mmfmd7wv4tgq" path="res://gameplay/collectibles_respawn/collectibles_respawn.tscn" id="3_rsott"]
 
 [node name="main" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_582jy")]
 position = Vector2(278, 847)
 
-[node name="collectible" parent="." instance=ExtResource("2_c201j")]
-position = Vector2(270, -71)
+[node name="collectibles_respawn" parent="." instance=ExtResource("3_rsott")]
+position = Vector2(0, -64)

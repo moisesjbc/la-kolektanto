@@ -9,7 +9,7 @@ size = Vector2(127, 129)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d561c"]
 size = Vector2(130, 130)
 
-[node name="collectible" type="CharacterBody2D"]
+[node name="collectible" type="CharacterBody2D" groups=["collectibles"]]
 collision_layer = 2
 script = ExtResource("1_d561c")
 
