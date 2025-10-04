@@ -23,4 +23,5 @@ autostart = true
 [connection signal="time_elapsed" from="." to="gui" method="_on_main_time_elapsed"]
 [connection signal="collectibles_updated" from="player" to="gui" method="_on_player_collectibles_updated"]
 [connection signal="money_updated" from="player" to="gui" method="_on_player_money_updated"]
+[connection signal="sell_button_pressed" from="gui" to="player" method="_on_gui_sell_button_pressed"]
 [connection signal="timeout" from="countdown_timer" to="." method="_on_countdown_timer_timeout"]

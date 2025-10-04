@@ -1,12 +1,14 @@
 extends Node
 
+signal sell_button_pressed
+
 func _ready():
 	update_sell_label(0, "???", 0)
 	update_score_label(0)
 	update_time_label(get_parent().seconds_left)
 
 func update_sell_label(quantity: int, type: String, money: int) -> void:
-	$control/bottom_container/hbox_container/sell_label.text = "Sell " + str(quantity) + " for " + str(money) + " €"
+	$control/bottom_container/hbox_container/sell_button/label.text = "Sell " + str(quantity) + " = " + str(money) + " €"
 	for collectible_sprite in $collectible_type_sprite.get_children():
 		collectible_sprite.visible = collectible_sprite.name == type
 
@@ -34,3 +36,6 @@ func left_button_pressed() -> bool:
 	
 func right_button_pressed() -> bool:
 	return $control/bottom_container/hbox_container/right_button.button_pressed
+
+func _on_sell_button_pressed() -> void:
+	emit_signal("sell_button_pressed")
