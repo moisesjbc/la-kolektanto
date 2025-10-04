@@ -26,11 +26,23 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="vbox_container" type="VBoxContainer" parent="control/margin_container"]
+[node name="top_container" type="HBoxContainer" parent="control/margin_container"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="score_label" type="Label" parent="control/margin_container/top_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_fn8ka")
+theme_override_font_sizes/font_size = 32
+text = "ffa"
+horizontal_alignment = 1
+
+[node name="bottom_container" type="VBoxContainer" parent="control/margin_container"]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="sell_text" type="Label" parent="control/margin_container/vbox_container"]
+[node name="sell_label" type="Label" parent="control/margin_container/bottom_container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fn8ka")
 theme_override_font_sizes/font_size = 32

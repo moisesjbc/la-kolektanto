@@ -15,3 +15,4 @@ position = Vector2(0, -64)
 [node name="gui" parent="." instance=ExtResource("3_27ff5")]
 
 [connection signal="collectibles_updated" from="player" to="gui" method="_on_player_collectibles_updated"]
+[connection signal="money_updated" from="player" to="gui" method="_on_player_money_updated"]
