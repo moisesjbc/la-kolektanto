@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyl8ir53xd7vb"]
 
-[ext_resource type="Texture2D" uid="uid://wy4xse3xbaje" path="res://icon.svg" id="1_3gclp"]
 [ext_resource type="Script" uid="uid://c2tmpvkonsyvm" path="res://gameplay/collectible/collectible.gd" id="1_d561c"]
+[ext_resource type="Texture2D" uid="uid://duyywc2vojk0a" path="res://gameplay/collectible/coin.png" id="2_4c23e"]
 [ext_resource type="Texture2D" uid="uid://b85u1qccdjhl5" path="res://gameplay/collectible/stamp.png" id="3_4c23e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gclp"]
-size = Vector2(127, 129)
+[sub_resource type="CircleShape2D" id="CircleShape2D_4c23e"]
+radius = 46.717236
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d561c"]
 size = Vector2(96, 122)
@@ -16,13 +16,12 @@ script = ExtResource("1_d561c")
 
 [node name="coin" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(1, 1, 0, 1)
-texture = ExtResource("1_3gclp")
+texture = ExtResource("2_4c23e")
 
 [node name="coin_collider" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_3gclp")
+shape = SubResource("CircleShape2D_4c23e")
 
 [node name="stamp" type="Sprite2D" parent="."]
 visible = false
