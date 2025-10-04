@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED: float = 1000
+var SPEED: float = 500
 var DIRECTION: Vector2 = Vector2(0, 1.0)
 var TYPE = "coin"
 
