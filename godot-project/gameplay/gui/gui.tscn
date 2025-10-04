@@ -30,6 +30,13 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_vertical = 0
 
+[node name="time_label" type="Label" parent="control/margin_container/top_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_fn8ka")
+theme_override_font_sizes/font_size = 32
+text = "Time: 60"
+
 [node name="score_label" type="Label" parent="control/margin_container/top_container"]
 layout_mode = 2
 size_flags_horizontal = 3

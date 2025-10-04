@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfqavponjhjfh"]
+[gd_scene load_steps=5 format=3 uid="uid://dfqavponjhjfh"]
 
+[ext_resource type="Script" uid="uid://bired58prjyky" path="res://gameplay/main/main.gd" id="1_27ff5"]
 [ext_resource type="PackedScene" uid="uid://ba4kaciikq8ru" path="res://gameplay/player/player.tscn" id="1_582jy"]
 [ext_resource type="PackedScene" uid="uid://ch3xd2o070thq" path="res://gameplay/gui/gui.tscn" id="3_27ff5"]
 [ext_resource type="PackedScene" uid="uid://mmfmd7wv4tgq" path="res://gameplay/collectibles_respawn/collectibles_respawn.tscn" id="3_rsott"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_27ff5")
 
 [node name="player" parent="." instance=ExtResource("1_582jy")]
 position = Vector2(278, 847)
@@ -14,5 +16,11 @@ position = Vector2(0, -64)
 
 [node name="gui" parent="." instance=ExtResource("3_27ff5")]
 
+[node name="countdown_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="game_over" from="." to="gui" method="_on_main_game_over"]
+[connection signal="time_elapsed" from="." to="gui" method="_on_main_time_elapsed"]
 [connection signal="collectibles_updated" from="player" to="gui" method="_on_player_collectibles_updated"]
 [connection signal="money_updated" from="player" to="gui" method="_on_player_money_updated"]
+[connection signal="timeout" from="countdown_timer" to="." method="_on_countdown_timer_timeout"]
