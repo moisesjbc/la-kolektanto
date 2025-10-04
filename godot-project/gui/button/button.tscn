@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://empygty13skr"]
+[gd_scene load_steps=5 format=3 uid="uid://empygty13skr"]
 
 [ext_resource type="FontFile" uid="uid://cjqm33jfi3sjh" path="res://fonts/Ubuntu-B.ttf" id="1_q5wpd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5wpd"]
+bg_color = Color(0.050980393, 0.19607843, 0.3019608, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.45135164, 0.55908364, 0.5896272, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urwxp"]
+bg_color = Color(0.19402066, 0.39122158, 0.5553793, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.6388387, 0.7426201, 0.7677741, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3nm8"]
+bg_color = Color(0.14218068, 0.30225503, 0.4350246, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.54608965, 0.6569007, 0.6847096, 1)
 
 [node name="button" type="Button"]
 custom_minimum_size = Vector2(400, 50)
@@ -8,3 +32,6 @@ offset_right = 8.0
 offset_bottom = 8.0
 theme_override_fonts/font = ExtResource("1_q5wpd")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5wpd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_urwxp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c3nm8")

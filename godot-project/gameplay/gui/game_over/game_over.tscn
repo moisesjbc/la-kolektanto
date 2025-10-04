@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://3darbcdj8rf"]
+[gd_scene load_steps=5 format=3 uid="uid://3darbcdj8rf"]
 
 [ext_resource type="Script" uid="uid://ds0gj64jrh0nw" path="res://gameplay/gui/game_over/game_over.gd" id="1_ypi5f"]
 [ext_resource type="FontFile" uid="uid://cjqm33jfi3sjh" path="res://fonts/Ubuntu-B.ttf" id="2_54slk"]
+[ext_resource type="PackedScene" uid="uid://bd40777jxmmm6" path="res://gui/panel/panel.tscn" id="2_dlc4o"]
 [ext_resource type="PackedScene" uid="uid://empygty13skr" path="res://gui/button/button.tscn" id="3_tj21e"]
 
 [node name="game_over" type="Control"]
@@ -22,8 +23,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="panel" type="Panel" parent="center_container"]
-custom_minimum_size = Vector2(500, 250)
+[node name="panel" parent="center_container" instance=ExtResource("2_dlc4o")]
+custom_minimum_size = Vector2(500, 300)
 layout_mode = 2
 
 [node name="margin_container" type="MarginContainer" parent="center_container/panel"]
@@ -33,10 +34,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="vbox_container" type="VBoxContainer" parent="center_container/panel/margin_container"]
 layout_mode = 2
