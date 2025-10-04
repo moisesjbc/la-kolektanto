@@ -6,7 +6,7 @@ func _ready():
 	update_time_label(get_parent().seconds_left)
 
 func update_sell_label(quantity: int, type: String, money: int) -> void:
-	$control/sell_label.text = "Sell " + str(quantity) + " for " + str(money) + " €"
+	$control/bottom_container/hbox_container/sell_label.text = "Sell " + str(quantity) + " for " + str(money) + " €"
 	for collectible_sprite in $collectible_type_sprite.get_children():
 		collectible_sprite.visible = collectible_sprite.name == type
 
@@ -28,3 +28,9 @@ func _on_main_time_elapsed(seconds_left: int) -> void:
 func _on_main_game_over() -> void:
 	update_time_label(0)
 	$game_over.start()
+
+func left_button_pressed() -> bool:
+	return $control/bottom_container/hbox_container/left_button.button_pressed
+	
+func right_button_pressed() -> bool:
+	return $control/bottom_container/hbox_container/right_button.button_pressed

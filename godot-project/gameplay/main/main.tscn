@@ -9,7 +9,7 @@
 script = ExtResource("1_27ff5")
 
 [node name="player" parent="." instance=ExtResource("1_582jy")]
-position = Vector2(278, 847)
+position = Vector2(286, 815)
 
 [node name="collectibles_respawn" parent="." instance=ExtResource("3_rsott")]
 position = Vector2(0, -64)

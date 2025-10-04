@@ -11,9 +11,9 @@ signal money_updated(money: int)
 func _process(delta: float) -> void:
 	var direction: Vector2 = Vector2.ZERO
 
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left") or get_parent().get_node("gui").left_button_pressed():
 		direction.x = -1
-	elif Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("ui_right") or get_parent().get_node("gui").right_button_pressed():
 		direction.x = 1
 		
 	if Input.is_action_just_pressed("ui_sell") and current_collectibles_quantity > 0:
