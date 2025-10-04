@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyl8ir53xd7vb"]
+[gd_scene load_steps=7 format=3 uid="uid://cyl8ir53xd7vb"]
 
 [ext_resource type="Script" uid="uid://c2tmpvkonsyvm" path="res://gameplay/collectible/collectible.gd" id="1_d561c"]
 [ext_resource type="Texture2D" uid="uid://duyywc2vojk0a" path="res://gameplay/collectible/coin.png" id="2_4c23e"]
 [ext_resource type="Texture2D" uid="uid://b85u1qccdjhl5" path="res://gameplay/collectible/stamp.png" id="3_4c23e"]
+[ext_resource type="FontFile" uid="uid://cjqm33jfi3sjh" path="res://fonts/Ubuntu-B.ttf" id="4_ishge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4c23e"]
 radius = 46.717236
@@ -14,8 +15,25 @@ size = Vector2(96, 122)
 collision_layer = 2
 script = ExtResource("1_d561c")
 
-[node name="coin" type="Sprite2D" parent="."]
+[node name="special" type="Node2D" parent="."]
 visible = false
+
+[node name="extra_label" type="Label" parent="special"]
+visible = false
+offset_left = -45.0
+offset_top = -90.0
+offset_right = 46.0
+offset_bottom = -53.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_ishge")
+theme_override_font_sizes/font_size = 32
+text = "+100"
+horizontal_alignment = 1
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="special"]
+rect = Rect2(-63, -64, 125, 128)
+
+[node name="coin" type="Sprite2D" parent="."]
 texture = ExtResource("2_4c23e")
 
 [node name="coin_collider" type="CollisionShape2D" parent="."]
@@ -31,10 +49,5 @@ texture = ExtResource("3_4c23e")
 visible = false
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_d561c")
-
-[node name="special" type="Node2D" parent="."]
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="special"]
-rect = Rect2(-63, -64, 125, 128)
 
 [connection signal="screen_exited" from="special/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

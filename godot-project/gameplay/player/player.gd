@@ -21,19 +21,18 @@ func _process(delta: float) -> void:
 
 	var collision: KinematicCollision2D = move_and_collide(direction * SPEED * delta)
 	if collision and collision.get_collider().is_in_group("collectibles"):
-		collect(collision.get_collider().TYPE)
+		collect(collision.get_collider())
 		collision.get_collider().queue_free()
 
-func collect(collectible_type: String) -> void:
-	print("Collected: " + collectible_type)
-	if collectible_type == current_collectibles_type:
+func collect(collectible: Node) -> void:
+	if collectible.TYPE == current_collectibles_type:
 		current_collectibles_quantity += 1
-		current_collectibles_money += current_collectibles_quantity
+		current_collectibles_money += current_collectibles_quantity + collectible.extra_money
 	else:
 		current_collectibles_quantity = 1
-		current_collectibles_money = 1
+		current_collectibles_money = 1 + collectible.extra_money
 
-	current_collectibles_type = collectible_type
+	current_collectibles_type = collectible.TYPE
 	
 	emit_signal("collectibles_updated", current_collectibles_quantity, current_collectibles_type, current_collectibles_money)
 
