@@ -27,3 +27,4 @@ func _on_main_time_elapsed(seconds_left: int) -> void:
 
 func _on_main_game_over() -> void:
 	update_time_label(0)
+	$game_over.start()

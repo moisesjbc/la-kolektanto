@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://empygty13skr"]
+
+[ext_resource type="FontFile" uid="uid://cjqm33jfi3sjh" path="res://fonts/Ubuntu-B.ttf" id="1_q5wpd"]
+
+[node name="button" type="Button"]
+custom_minimum_size = Vector2(400, 50)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_q5wpd")
+theme_override_font_sizes/font_size = 32
