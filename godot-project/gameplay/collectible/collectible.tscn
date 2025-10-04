@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyl8ir53xd7vb"]
+[gd_scene load_steps=6 format=3 uid="uid://cyl8ir53xd7vb"]
 
 [ext_resource type="Texture2D" uid="uid://wy4xse3xbaje" path="res://icon.svg" id="1_3gclp"]
 [ext_resource type="Script" uid="uid://c2tmpvkonsyvm" path="res://gameplay/collectible/collectible.gd" id="1_d561c"]
+[ext_resource type="Texture2D" uid="uid://b85u1qccdjhl5" path="res://gameplay/collectible/stamp.png" id="3_4c23e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gclp"]
 size = Vector2(127, 129)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d561c"]
-size = Vector2(130, 130)
+size = Vector2(96, 122)
 
 [node name="collectible" type="CharacterBody2D" groups=["collectibles"]]
 collision_layer = 2
@@ -25,12 +26,11 @@ shape = SubResource("RectangleShape2D_3gclp")
 
 [node name="stamp" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(0, 1, 0, 1)
-texture = ExtResource("1_3gclp")
+texture = ExtResource("3_4c23e")
 
 [node name="stamp_collider" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-1, 1)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_d561c")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
