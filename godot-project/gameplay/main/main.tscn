@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfqavponjhjfh"]
+[gd_scene load_steps=4 format=3 uid="uid://dfqavponjhjfh"]
 
 [ext_resource type="PackedScene" uid="uid://ba4kaciikq8ru" path="res://gameplay/player/player.tscn" id="1_582jy"]
+[ext_resource type="PackedScene" uid="uid://ch3xd2o070thq" path="res://gameplay/gui/gui.tscn" id="3_27ff5"]
 [ext_resource type="PackedScene" uid="uid://mmfmd7wv4tgq" path="res://gameplay/collectibles_respawn/collectibles_respawn.tscn" id="3_rsott"]
 
 [node name="main" type="Node2D"]
@@ -10,3 +11,7 @@ position = Vector2(278, 847)
 
 [node name="collectibles_respawn" parent="." instance=ExtResource("3_rsott")]
 position = Vector2(0, -64)
+
+[node name="gui" parent="." instance=ExtResource("3_27ff5")]
+
+[connection signal="collectibles_updated" from="player" to="gui" method="_on_player_collectibles_updated"]

@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
 var SPEED: int = 500
+var current_collectibles_quantity: int = 0
+var current_collectibles_type: String = '???'
+var current_collectibles_money: int = 0
+signal collectibles_updated(quantity: int, type: String, money: int)
 
 func _process(delta: float) -> void:
 	var direction: Vector2 = Vector2.ZERO
@@ -17,3 +21,13 @@ func _process(delta: float) -> void:
 
 func collect(collectible_type: String) -> void:
 	print("Collected: " + collectible_type)
+	if collectible_type == current_collectibles_type:
+		current_collectibles_quantity += 1
+		current_collectibles_money += current_collectibles_quantity
+	else:
+		current_collectibles_quantity = 1
+		current_collectibles_money = 1
+
+	current_collectibles_type = collectible_type
+	
+	emit_signal("collectibles_updated", current_collectibles_quantity, current_collectibles_type, current_collectibles_money)
