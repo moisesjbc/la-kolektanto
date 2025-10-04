@@ -11,3 +11,6 @@ func _process(delta: float) -> void:
 		direction.x = 1
 
 	move_and_collide(direction * SPEED * delta)
+
+func collect(collectible_type: String) -> void:
+	print("Collected: " + collectible_type)
