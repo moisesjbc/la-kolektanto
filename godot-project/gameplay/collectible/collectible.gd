@@ -4,6 +4,18 @@ var SPEED: float = 1000
 var DIRECTION: Vector2 = Vector2(0, 1.0)
 var TYPE = "coin"
 
+func _ready() -> void:
+	randomize()
+	var type_index: int = randi() % 2
+	if type_index == 0:
+		TYPE = "coin"
+		$coin.visible = true
+		$coin_collider.visible = true
+	else:
+		TYPE = "stamp"
+		$stamp.visible = true
+		$stamp_collider.visible = true
+
 func _process(delta: float) -> void:
 	var collision: KinematicCollision2D = move_and_collide(DIRECTION * SPEED * delta)
 	if collision:
