@@ -14,5 +14,5 @@ func _on_restart_game_button_pressed() -> void:
 	restart_game()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.keycode == KEY_SPACE:
+	if event is InputEventKey and event.keycode == KEY_R:
 		restart_game()

@@ -54,6 +54,6 @@ horizontal_alignment = 1
 [node name="restart_game_button" parent="center_container/panel/margin_container/vbox_container" instance=ExtResource("3_tj21e")]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Resume game (space)"
+text = "Restart game (R)"
 
 [connection signal="pressed" from="center_container/panel/margin_container/vbox_container/restart_game_button" to="." method="_on_restart_game_button_pressed"]
