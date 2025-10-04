@@ -6,7 +6,9 @@ func _ready():
 	update_time_label(get_parent().seconds_left)
 
 func update_sell_label(quantity: int, type: String, money: int) -> void:
-	$control/margin_container/bottom_container/sell_label.text = "Sell " + str(quantity) + " " + type + " for " + str(money) + " €"
+	$control/sell_label.text = "Sell " + str(quantity) + " for " + str(money) + " €"
+	for collectible_sprite in $collectible_type_sprite.get_children():
+		collectible_sprite.visible = collectible_sprite.name == type
 
 func update_score_label(score: int) -> void:
 	$control/margin_container/top_container/score_label.text = "Money: " + str(score)
