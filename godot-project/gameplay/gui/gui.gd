@@ -16,7 +16,7 @@ func update_score_label(score: int) -> void:
 	$control/margin_container/top_container/score_label.text = "Money: " + str(score)
 	
 func update_time_label(seconds_left: int) -> void:
-	$control/margin_container/top_container/time_label.text = "Time: " + str(seconds_left)
+	$control/time_label.text = str(seconds_left / 60) + ":%02d" % (seconds_left % 60)
 
 func _on_player_collectibles_updated(quantity: int, type: String, money: int) -> void:
 	update_sell_label(quantity, type, money)

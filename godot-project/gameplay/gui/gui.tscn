@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch3xd2o070thq"]
+[gd_scene load_steps=9 format=3 uid="uid://ch3xd2o070thq"]
 
 [ext_resource type="Script" uid="uid://dy1rm575po04" path="res://gameplay/gui/gui.gd" id="1_6vp4t"]
 [ext_resource type="FontFile" uid="uid://cjqm33jfi3sjh" path="res://fonts/Ubuntu-B.ttf" id="1_fn8ka"]
+[ext_resource type="Texture2D" uid="uid://28ocvv7qtmhk" path="res://gameplay/gui/timer.png" id="2_nju0n"]
 [ext_resource type="Texture2D" uid="uid://ddmfnagu12hr1" path="res://gameplay/gui/right_button.png" id="3_5u0en"]
 [ext_resource type="Texture2D" uid="uid://duyywc2vojk0a" path="res://gameplay/collectible/coin.png" id="3_q6c58"]
 [ext_resource type="Texture2D" uid="uid://b85u1qccdjhl5" path="res://gameplay/collectible/stamp.png" id="4_t58tl"]
@@ -19,6 +20,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="timer_sprite" type="Sprite2D" parent="control"]
+position = Vector2(83, 31)
+texture = ExtResource("2_nju0n")
+
+[node name="time_label" type="Label" parent="control"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 13.0
+offset_right = 153.0
+offset_bottom = 50.0
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_fn8ka")
+theme_override_font_sizes/font_size = 32
+text = "60"
+horizontal_alignment = 1
+
 [node name="margin_container" type="MarginContainer" parent="control"]
 layout_mode = 1
 anchors_preset = 15
@@ -34,13 +51,6 @@ theme_override_constants/margin_bottom = 10
 [node name="top_container" type="HBoxContainer" parent="control/margin_container"]
 layout_mode = 2
 size_flags_vertical = 0
-
-[node name="time_label" type="Label" parent="control/margin_container/top_container"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_fn8ka")
-theme_override_font_sizes/font_size = 32
-text = "Time: 60"
 
 [node name="score_label" type="Label" parent="control/margin_container/top_container"]
 layout_mode = 2
