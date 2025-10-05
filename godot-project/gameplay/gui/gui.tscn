@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch3xd2o070thq"]
+[gd_scene load_steps=11 format=3 uid="uid://ch3xd2o070thq"]
 
 [ext_resource type="Script" uid="uid://dy1rm575po04" path="res://gameplay/gui/gui.gd" id="1_6vp4t"]
 [ext_resource type="FontFile" uid="uid://cjqm33jfi3sjh" path="res://fonts/Ubuntu-B.ttf" id="1_fn8ka"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b85u1qccdjhl5" path="res://gameplay/collectible/stamp.png" id="4_t58tl"]
 [ext_resource type="PackedScene" uid="uid://empygty13skr" path="res://gui/button/button.tscn" id="4_to63c"]
 [ext_resource type="PackedScene" uid="uid://3darbcdj8rf" path="res://gameplay/gui/game_over/game_over.tscn" id="5_ukvlr"]
+[ext_resource type="PackedScene" uid="uid://dn2xu3tbm63oc" path="res://gameplay/gui/pause_menu/pause_menu.tscn" id="10_4o2tm"]
 
 [node name="gui" type="Node"]
 script = ExtResource("1_6vp4t")
@@ -134,6 +135,9 @@ process_mode = 4
 texture = ExtResource("4_t58tl")
 
 [node name="game_over" parent="." instance=ExtResource("5_ukvlr")]
+visible = false
+
+[node name="pause_menu" parent="." instance=ExtResource("10_4o2tm")]
 visible = false
 
 [connection signal="pressed" from="control/bottom_container/hbox_container/sell_button" to="." method="_on_sell_button_pressed"]
