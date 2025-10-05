@@ -3,9 +3,12 @@ extends Node
 signal sell_button_pressed
 
 func _ready():
+	reset()
+	
+func reset():
 	update_sell_label(0, "???", 0)
 	update_score_label(0)
-	update_time_label(get_parent().seconds_left)
+	update_time_label(60)
 
 func update_sell_label(quantity: int, type: String, money: int) -> void:
 	$control/bottom_container/hbox_container/sell_button/label.text = "Sell " + str(quantity) + " = " + str(money) + " €"
@@ -41,8 +44,10 @@ func _on_sell_button_pressed() -> void:
 	emit_signal("sell_button_pressed")
 
 func _on_pause_button_pressed() -> void:
-	if not get_tree().paused:
-		if not $game_over.visible:
-			$pause_menu.pause()
-	else:
-		$pause_menu.unpause()
+	# Don't pause on tutorial
+	if get_node("/root/main"):
+		if not get_tree().paused:
+			if not $game_over.visible:
+				$pause_menu.pause()
+		else:
+			$pause_menu.unpause()

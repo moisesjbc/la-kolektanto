@@ -1,0 +1,186 @@
+[gd_scene load_steps=18 format=3 uid="uid://dvmi6cn2ctrvv"]
+
+[ext_resource type="Script" uid="uid://d23a6cbgsh5ia" path="res://gameplay/tutorial/tutorial.gd" id="1_0uigr"]
+[ext_resource type="PackedScene" uid="uid://ba4kaciikq8ru" path="res://gameplay/player/player.tscn" id="2_xyu77"]
+[ext_resource type="PackedScene" uid="uid://ch3xd2o070thq" path="res://gameplay/gui/gui.tscn" id="4_cbfrt"]
+[ext_resource type="Script" uid="uid://dojj4fycuqyu6" path="res://gameplay/tutorial/steps/0.gd" id="4_wc0rw"]
+[ext_resource type="PackedScene" uid="uid://bd40777jxmmm6" path="res://gui/panel/panel.tscn" id="5_jsq14"]
+[ext_resource type="Script" uid="uid://dtfadd5od7q3h" path="res://gameplay/tutorial/steps/1.gd" id="5_nuaal"]
+[ext_resource type="Script" uid="uid://dwuruw2sp80up" path="res://gameplay/tutorial/steps/2.gd" id="6_gg4k3"]
+[ext_resource type="Texture2D" uid="uid://duyywc2vojk0a" path="res://gameplay/collectible/coin.png" id="6_js8d8"]
+[ext_resource type="FontFile" uid="uid://cjqm33jfi3sjh" path="res://fonts/Ubuntu-B.ttf" id="6_tk2y3"]
+[ext_resource type="PackedScene" uid="uid://empygty13skr" path="res://gui/button/button.tscn" id="6_wc0rw"]
+[ext_resource type="Texture2D" uid="uid://b85u1qccdjhl5" path="res://gameplay/collectible/stamp.png" id="7_djjwu"]
+[ext_resource type="Script" uid="uid://yf5rjb2ylmmw" path="res://gameplay/tutorial/steps/3.gd" id="9_ujyh7"]
+[ext_resource type="Script" uid="uid://ipo0cmsxo2qg" path="res://gameplay/tutorial/steps/4.gd" id="10_6v7t0"]
+[ext_resource type="Script" uid="uid://blp8s5ffsi8at" path="res://gameplay/tutorial/steps/5.gd" id="11_lsimx"]
+[ext_resource type="Script" uid="uid://c2fiylsx4qifm" path="res://gameplay/tutorial/steps/6.gd" id="12_b7r55"]
+[ext_resource type="Script" uid="uid://wssfhf0775a4" path="res://gameplay/tutorial/steps/7.gd" id="14_7mx3h"]
+[ext_resource type="Script" uid="uid://dpetmvla2kdlh" path="res://gameplay/tutorial/steps/8.gd" id="15_p60ou"]
+
+[node name="tutorial" type="Node"]
+script = ExtResource("1_0uigr")
+
+[node name="player" parent="." instance=ExtResource("2_xyu77")]
+process_mode = 4
+position = Vector2(286, 815)
+
+[node name="gui" parent="." instance=ExtResource("4_cbfrt")]
+process_mode = 4
+
+[node name="steps" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="steps"]
+visible = false
+script = ExtResource("4_wc0rw")
+
+[node name="panel_pos" type="Marker2D" parent="steps/0"]
+position = Vector2(0, 332)
+
+[node name="1" type="Node2D" parent="steps"]
+visible = false
+script = ExtResource("5_nuaal")
+
+[node name="panel_pos" type="Marker2D" parent="steps/1"]
+position = Vector2(0, 476)
+
+[node name="2" type="Node2D" parent="steps"]
+visible = false
+script = ExtResource("6_gg4k3")
+
+[node name="panel_pos" type="Marker2D" parent="steps/2"]
+position = Vector2(0, 76)
+
+[node name="coin_sprite" type="Sprite2D" parent="steps/2"]
+position = Vector2(144, 448)
+texture = ExtResource("6_js8d8")
+
+[node name="stamp_sprite" type="Sprite2D" parent="steps/2"]
+position = Vector2(432, 608)
+texture = ExtResource("7_djjwu")
+
+[node name="3" type="Node2D" parent="steps"]
+visible = false
+script = ExtResource("9_ujyh7")
+
+[node name="panel_pos" type="Marker2D" parent="steps/3"]
+position = Vector2(0, 540)
+
+[node name="4" type="Node2D" parent="steps"]
+visible = false
+script = ExtResource("10_6v7t0")
+
+[node name="panel_pos" type="Marker2D" parent="steps/4"]
+position = Vector2(0, 540)
+
+[node name="5" type="Node2D" parent="steps"]
+visible = false
+script = ExtResource("11_lsimx")
+
+[node name="panel_pos" type="Marker2D" parent="steps/5"]
+position = Vector2(0, 540)
+
+[node name="6" type="Node2D" parent="steps"]
+visible = false
+script = ExtResource("12_b7r55")
+
+[node name="panel_pos" type="Marker2D" parent="steps/6"]
+position = Vector2(0, 156)
+
+[node name="stamp_sprite" type="Sprite2D" parent="steps/6"]
+position = Vector2(432, 608)
+texture = ExtResource("7_djjwu")
+
+[node name="extra_label" type="Label" parent="steps/6/stamp_sprite"]
+offset_left = -45.0
+offset_top = -99.0
+offset_right = 46.0
+offset_bottom = -62.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("6_tk2y3")
+theme_override_font_sizes/font_size = 32
+text = "+50"
+horizontal_alignment = 1
+
+[node name="7" type="Node2D" parent="steps"]
+script = ExtResource("14_7mx3h")
+
+[node name="panel_pos" type="Marker2D" parent="steps/7"]
+position = Vector2(0, 76)
+
+[node name="8" type="Node2D" parent="steps"]
+script = ExtResource("15_p60ou")
+
+[node name="panel_pos" type="Marker2D" parent="steps/8"]
+position = Vector2(0, 76)
+
+[node name="tutorial_gui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="margin_container" type="MarginContainer" parent="tutorial_gui"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="panel" parent="tutorial_gui/margin_container" instance=ExtResource("5_jsq14")]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="margin_container" type="MarginContainer" parent="tutorial_gui/margin_container/panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="vbox_container" type="VBoxContainer" parent="tutorial_gui/margin_container/panel/margin_container"]
+layout_mode = 2
+
+[node name="instructions_label" type="Label" parent="tutorial_gui/margin_container/panel/margin_container/vbox_container"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("6_tk2y3")
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="bottom_bar" type="HBoxContainer" parent="tutorial_gui/margin_container/panel/margin_container/vbox_container"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="previous_button" parent="tutorial_gui/margin_container/panel/margin_container/vbox_container/bottom_bar" instance=ExtResource("6_wc0rw")]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<"
+
+[node name="next_button" parent="tutorial_gui/margin_container/panel/margin_container/vbox_container/bottom_bar" instance=ExtResource("6_wc0rw")]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">"
+
+[connection signal="collectibles_updated" from="player" to="gui" method="_on_player_collectibles_updated"]
+[connection signal="money_updated" from="player" to="gui" method="_on_player_money_updated"]
+[connection signal="sell_button_pressed" from="gui" to="player" method="_on_gui_sell_button_pressed"]
+[connection signal="pressed" from="tutorial_gui/margin_container/panel/margin_container/vbox_container/bottom_bar/previous_button" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="tutorial_gui/margin_container/panel/margin_container/vbox_container/bottom_bar/next_button" to="." method="_on_next_button_pressed"]

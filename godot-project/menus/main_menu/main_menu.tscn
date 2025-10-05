@@ -42,9 +42,14 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Play"
 
+[node name="tutorial_button" parent="margin_container/vbox_container" instance=ExtResource("2_1nwmw")]
+layout_mode = 2
+text = "How to play"
+
 [node name="credits_button" parent="margin_container/vbox_container" instance=ExtResource("2_1nwmw")]
 layout_mode = 2
 text = "Credits"
 
 [connection signal="pressed" from="margin_container/vbox_container/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="margin_container/vbox_container/tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="margin_container/vbox_container/credits_button" to="." method="_on_credits_button_pressed"]

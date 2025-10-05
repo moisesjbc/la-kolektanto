@@ -20,7 +20,8 @@ func _on_resume_game_pressed() -> void:
 	resume_game()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey:
+	# Don't pause on tutorial
+	if get_node("/root/main") and event is InputEventKey:
 		if get_tree().paused and event.keycode == KEY_R:
 			resume_game()
 		elif not get_tree().paused and event.keycode == KEY_ESCAPE:
