@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ch3xd2o070thq"]
+[gd_scene load_steps=12 format=3 uid="uid://ch3xd2o070thq"]
 
 [ext_resource type="Script" uid="uid://dy1rm575po04" path="res://gameplay/gui/gui.gd" id="1_6vp4t"]
 [ext_resource type="FontFile" uid="uid://cjqm33jfi3sjh" path="res://fonts/Ubuntu-B.ttf" id="1_fn8ka"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b85u1qccdjhl5" path="res://gameplay/collectible/stamp.png" id="4_t58tl"]
 [ext_resource type="PackedScene" uid="uid://empygty13skr" path="res://gui/button/button.tscn" id="4_to63c"]
 [ext_resource type="PackedScene" uid="uid://3darbcdj8rf" path="res://gameplay/gui/game_over/game_over.tscn" id="5_ukvlr"]
+[ext_resource type="Texture2D" uid="uid://c8rxp75jxuhur" path="res://gameplay/gui/pause_button.png" id="7_wqdgo"]
 [ext_resource type="PackedScene" uid="uid://dn2xu3tbm63oc" path="res://gameplay/gui/pause_menu/pause_menu.tscn" id="10_4o2tm"]
 
 [node name="gui" type="Node"]
@@ -122,6 +123,18 @@ texture_normal = ExtResource("3_5u0en")
 texture_pressed = ExtResource("3_5u0en")
 texture_hover = ExtResource("3_5u0en")
 
+[node name="pause_button" type="TextureButton" parent="control"]
+process_mode = 3
+layout_mode = 0
+offset_left = 221.0
+offset_top = 6.0
+offset_right = 271.0
+offset_bottom = 56.0
+texture_normal = ExtResource("7_wqdgo")
+texture_pressed = ExtResource("7_wqdgo")
+texture_hover = ExtResource("7_wqdgo")
+texture_focused = ExtResource("7_wqdgo")
+
 [node name="collectible_type_sprite" type="Node2D" parent="."]
 position = Vector2(159, 899)
 scale = Vector2(0.5, 0.5)
@@ -141,3 +154,4 @@ visible = false
 visible = false
 
 [connection signal="pressed" from="control/bottom_container/hbox_container/sell_button" to="." method="_on_sell_button_pressed"]
+[connection signal="pressed" from="control/pause_button" to="." method="_on_pause_button_pressed"]

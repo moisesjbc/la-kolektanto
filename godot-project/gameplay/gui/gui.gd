@@ -39,3 +39,10 @@ func right_button_pressed() -> bool:
 
 func _on_sell_button_pressed() -> void:
 	emit_signal("sell_button_pressed")
+
+func _on_pause_button_pressed() -> void:
+	if not get_tree().paused:
+		if not $game_over.visible:
+			$pause_menu.pause()
+	else:
+		$pause_menu.unpause()
