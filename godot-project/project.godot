@@ -25,6 +25,7 @@ sound_manager="*res://globals/sound_manager/sound_manager.tscn"
 window/size/viewport_width=540
 window/size/viewport_height=960
 window/stretch/mode="canvas_items"
+window/handheld/orientation=1
 
 [global_group]
 
@@ -65,3 +66,4 @@ ui_sell={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.27401912, 0.37203172, 0.45231968, 1)
