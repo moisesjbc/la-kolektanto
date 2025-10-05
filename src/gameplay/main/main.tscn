@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfqavponjhjfh"]
+[gd_scene load_steps=6 format=3 uid="uid://dfqavponjhjfh"]
 
 [ext_resource type="Script" uid="uid://bired58prjyky" path="res://gameplay/main/main.gd" id="1_27ff5"]
 [ext_resource type="PackedScene" uid="uid://ba4kaciikq8ru" path="res://gameplay/player/player.tscn" id="1_582jy"]
 [ext_resource type="PackedScene" uid="uid://ch3xd2o070thq" path="res://gameplay/gui/gui.tscn" id="3_27ff5"]
 [ext_resource type="PackedScene" uid="uid://mmfmd7wv4tgq" path="res://gameplay/collectibles_respawn/collectibles_respawn.tscn" id="3_rsott"]
+[ext_resource type="PackedScene" uid="uid://bjdkyugyr26ar" path="res://gameplay/wall/wall.tscn" id="5_ei258"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_27ff5")
@@ -18,6 +19,14 @@ position = Vector2(0, -64)
 
 [node name="countdown_timer" type="Timer" parent="."]
 autostart = true
+
+[node name="walls" type="Node2D" parent="."]
+position = Vector2(-37, 816)
+
+[node name="left_wall" parent="walls" instance=ExtResource("5_ei258")]
+
+[node name="right_wall" parent="walls" instance=ExtResource("5_ei258")]
+position = Vector2(613, 0)
 
 [connection signal="game_over" from="." to="gui" method="_on_main_game_over"]
 [connection signal="time_elapsed" from="." to="gui" method="_on_main_time_elapsed"]
