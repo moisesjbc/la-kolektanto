@@ -46,6 +46,7 @@ func sell_collectibles() -> void:
 	
 	emit_signal("money_updated", current_money)
 	emit_signal("collectibles_updated", current_collectibles_quantity, current_collectibles_type, current_collectibles_money)
+	$sell.play()
 
 
 func _on_gui_sell_button_pressed() -> void:
