@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba4kaciikq8ru"]
+[gd_scene load_steps=5 format=3 uid="uid://ba4kaciikq8ru"]
 
 [ext_resource type="Script" uid="uid://c3cgdro27ubi8" path="res://gameplay/player/player.gd" id="1_xq3ts"]
 [ext_resource type="Texture2D" uid="uid://bhueselgpsvfh" path="res://gameplay/player/player.png" id="2_xq3ts"]
+[ext_resource type="AudioStream" uid="uid://y6eduvd145yf" path="res://gameplay/player/collect.wav" id="3_wvk08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xq3ts"]
 size = Vector2(126, 34)
@@ -17,3 +18,8 @@ texture = ExtResource("2_xq3ts")
 [node name="collider" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_xq3ts")
+
+[node name="collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wvk08")
+volume_db = -10.0
+bus = &"SFX"

@@ -35,6 +35,7 @@ func collect(collectible: Node) -> void:
 	current_collectibles_type = collectible.TYPE
 	
 	emit_signal("collectibles_updated", current_collectibles_quantity, current_collectibles_type, current_collectibles_money)
+	$collect.play()
 
 func sell_collectibles() -> void:
 	current_money += current_collectibles_money
