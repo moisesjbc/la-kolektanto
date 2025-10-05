@@ -38,15 +38,16 @@ func collect(collectible: Node) -> void:
 	$collect.play()
 
 func sell_collectibles() -> void:
-	current_money += current_collectibles_money
-	
-	current_collectibles_quantity = 0
-	current_collectibles_type = '???'
-	current_collectibles_money = 0
-	
-	emit_signal("money_updated", current_money)
-	emit_signal("collectibles_updated", current_collectibles_quantity, current_collectibles_type, current_collectibles_money)
-	$sell.play()
+	if current_collectibles_quantity > 0:
+		current_money += current_collectibles_money
+		
+		current_collectibles_quantity = 0
+		current_collectibles_type = '???'
+		current_collectibles_money = 0
+		
+		emit_signal("money_updated", current_money)
+		emit_signal("collectibles_updated", current_collectibles_quantity, current_collectibles_type, current_collectibles_money)
+		$sell.play()
 
 
 func _on_gui_sell_button_pressed() -> void:
