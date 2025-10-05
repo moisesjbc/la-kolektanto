@@ -2,6 +2,7 @@ extends Node
 
 var current_step_index: int = 0
 var current_step: Node = null
+var seconds_left = 90
 
 func _ready() -> void:
 	set_step(0)

@@ -8,7 +8,7 @@ func _ready():
 func reset():
 	update_sell_label(0, "???", 0)
 	update_score_label(0)
-	update_time_label(60)
+	update_time_label(owner.seconds_left)
 
 func update_sell_label(quantity: int, type: String, money: int) -> void:
 	$control/bottom_container/hbox_container/sell_button/label.text = "Sell " + str(quantity) + " = " + str(money) + " €"
