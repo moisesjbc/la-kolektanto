@@ -52,6 +52,22 @@ theme_override_font_sizes/font_size = 32
 text = "GAME OVER"
 horizontal_alignment = 1
 
+[node name="score" type="Label" parent="center_container/panel/margin_container/vbox_container"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_54slk")
+theme_override_font_sizes/font_size = 20
+text = "Score: 100"
+horizontal_alignment = 1
+
+[node name="highest_score" type="Label" parent="center_container/panel/margin_container/vbox_container"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_54slk")
+theme_override_font_sizes/font_size = 20
+text = "Highest score: 100"
+horizontal_alignment = 1
+
 [node name="restart_game_button" parent="center_container/panel/margin_container/vbox_container" instance=ExtResource("3_tj21e")]
 layout_mode = 2
 size_flags_vertical = 3

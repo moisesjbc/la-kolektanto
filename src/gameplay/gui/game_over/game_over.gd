@@ -1,9 +1,13 @@
 extends Control
 
 
-func start() -> void:
+func start(current_score: int) -> void:
 	get_tree().paused = true
 	visible = true
+	$center_container/panel/margin_container/vbox_container/score.text = "Score: " + str(current_score)
+	if current_score > get_node("/root/stats").highest_score:
+		get_node("/root/stats").save_highest_score(current_score)
+	$center_container/panel/margin_container/vbox_container/highest_score.text = "Highest score: " + str(get_node("/root/stats").highest_score)
 	$game_over.play()
 
 func restart_game() -> void:

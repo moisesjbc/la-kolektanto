@@ -19,6 +19,7 @@ config/icon="uid://duyywc2vojk0a"
 [autoload]
 
 sound_manager="*res://globals/sound_manager/sound_manager.tscn"
+stats="*res://globals/stats/stats.tscn"
 
 [display]
 

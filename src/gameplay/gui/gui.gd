@@ -30,9 +30,9 @@ func _on_player_money_updated(money: int) -> void:
 func _on_main_time_elapsed(seconds_left: int) -> void:
 	update_time_label(seconds_left)
 
-func _on_main_game_over() -> void:
+func _on_main_game_over(current_score: int) -> void:
 	update_time_label(0)
-	$game_over.start()
+	$game_over.start(current_score)
 
 func left_button_pressed() -> bool:
 	return $control/bottom_container/hbox_container/left_button.button_pressed

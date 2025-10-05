@@ -1,7 +1,7 @@
 extends Node2D
 
 signal time_elapsed(seconds_left: int)
-signal game_over
+signal game_over(score: int)
 
 var seconds_left: int = 90
 
@@ -11,4 +11,4 @@ func _on_countdown_timer_timeout() -> void:
 	if seconds_left > 0:
 		emit_signal("time_elapsed", seconds_left)
 	else:
-		emit_signal("game_over")
+		emit_signal("game_over", $player.current_money)
