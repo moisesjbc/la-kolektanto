@@ -13,7 +13,7 @@ func update_sell_label(quantity: int, type: String, money: int) -> void:
 		collectible_sprite.visible = collectible_sprite.name == type
 
 func update_score_label(score: int) -> void:
-	$control/margin_container/top_container/score_label.text = "Money: " + str(score)
+	$control/score_label.text = str(score) + " €"
 	
 func update_time_label(seconds_left: int) -> void:
 	$control/time_label.text = str(seconds_left / 60) + ":%02d" % (seconds_left % 60)
