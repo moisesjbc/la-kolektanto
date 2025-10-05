@@ -3,7 +3,7 @@ extends Node2D
 signal time_elapsed(seconds_left: int)
 signal game_over
 
-var seconds_left: int = 5
+var seconds_left: int = 60
 
 
 func _on_countdown_timer_timeout() -> void:
