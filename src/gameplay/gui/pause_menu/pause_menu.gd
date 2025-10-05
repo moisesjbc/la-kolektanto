@@ -1,12 +1,15 @@
 extends Control
 
+var game_paused = false
 
 func pause() -> void:
 	get_tree().paused = true
+	game_paused = true
 	visible = true
 
 func unpause() -> void:
 	visible = false
+	game_paused = false
 	get_tree().paused = false
 
 func resume_game() -> void:
@@ -22,7 +25,7 @@ func _on_resume_game_pressed() -> void:
 func _input(event: InputEvent) -> void:
 	# Don't pause on tutorial
 	if get_node("/root/main") and event is InputEventKey:
-		if get_tree().paused and event.keycode == KEY_R:
+		if game_paused and event.keycode == KEY_R:
 			resume_game()
 		elif not get_tree().paused and event.keycode == KEY_ESCAPE:
 			pause()
