@@ -50,6 +50,13 @@ text = "How to play"
 layout_mode = 2
 text = "Credits"
 
+[node name="version" type="Label" parent="margin_container/vbox_container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xbn2l")
+theme_override_font_sizes/font_size = 20
+text = "v0.1"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="margin_container/vbox_container/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="margin_container/vbox_container/tutorial_button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="margin_container/vbox_container/credits_button" to="." method="_on_credits_button_pressed"]
