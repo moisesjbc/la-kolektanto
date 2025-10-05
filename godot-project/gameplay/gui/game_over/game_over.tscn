@@ -56,4 +56,10 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Restart game (R)"
 
+[node name="main_menu_button" parent="center_container/panel/margin_container/vbox_container" instance=ExtResource("3_tj21e")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Main menu"
+
 [connection signal="pressed" from="center_container/panel/margin_container/vbox_container/restart_game_button" to="." method="_on_restart_game_button_pressed"]
+[connection signal="pressed" from="center_container/panel/margin_container/vbox_container/main_menu_button" to="." method="_on_main_menu_button_pressed"]

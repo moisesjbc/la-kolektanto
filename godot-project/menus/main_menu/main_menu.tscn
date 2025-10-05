@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck60iqe57cs3p"]
+
+[ext_resource type="Script" uid="uid://b6jirl5cnghsm" path="res://menus/main_menu/main_menu.gd" id="1_vu5tu"]
+[ext_resource type="FontFile" uid="uid://cjqm33jfi3sjh" path="res://fonts/Ubuntu-B.ttf" id="1_xbn2l"]
+[ext_resource type="PackedScene" uid="uid://empygty13skr" path="res://gui/button/button.tscn" id="2_1nwmw"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vu5tu")
+
+[node name="margin_container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="vbox_container" type="VBoxContainer" parent="margin_container"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="margin_container/vbox_container"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_xbn2l")
+theme_override_font_sizes/font_size = 40
+text = "La kolektanto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play_button" parent="margin_container/vbox_container" instance=ExtResource("2_1nwmw")]
+layout_mode = 2
+text = "Play"
+
+[connection signal="pressed" from="margin_container/vbox_container/play_button" to="." method="_on_play_button_pressed"]
