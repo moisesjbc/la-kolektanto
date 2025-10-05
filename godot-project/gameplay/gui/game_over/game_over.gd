@@ -4,6 +4,7 @@ extends Control
 func start() -> void:
 	get_tree().paused = true
 	visible = true
+	$game_over.play()
 
 func restart_game() -> void:
 	unpause()
