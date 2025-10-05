@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch2h8tqi57qh7"]
+
+[ext_resource type="Script" uid="uid://8l58606c1265" path="res://globals/sound_manager/sound_manager.gd" id="1_fyjx2"]
+[ext_resource type="AudioStream" uid="uid://2o3stuiw7aq8" path="res://globals/sound_manager/button_pressed.wav" id="2_qw3el"]
+
+[node name="sound_manager" type="Node"]
+script = ExtResource("1_fyjx2")
+
+[node name="button_pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qw3el")
+volume_db = -15.0
+bus = &"SFX"
