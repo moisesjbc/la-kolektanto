@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://fvsgua0klv7y"]
+
+[ext_resource type="FontFile" uid="uid://cjqm33jfi3sjh" path="res://fonts/Ubuntu-B.ttf" id="1_dx8df"]
+[ext_resource type="Script" uid="uid://smgxadr51tld" path="res://menus/credits_menu/credits_menu.gd" id="1_he50m"]
+[ext_resource type="PackedScene" uid="uid://empygty13skr" path="res://gui/button/button.tscn" id="2_8fsqj"]
+[ext_resource type="PackedScene" uid="uid://bd40777jxmmm6" path="res://gui/panel/panel.tscn" id="3_wo8r0"]
+
+[node name="credits_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_he50m")
+
+[node name="margin_container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="vbox_container" type="VBoxContainer" parent="margin_container"]
+layout_mode = 2
+
+[node name="panel" parent="margin_container/vbox_container" instance=ExtResource("3_wo8r0")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="margin_container" type="MarginContainer" parent="margin_container/vbox_container/panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="scroll_container" type="ScrollContainer" parent="margin_container/vbox_container/panel/margin_container"]
+layout_mode = 2
+
+[node name="credits_text" type="RichTextLabel" parent="margin_container/vbox_container/panel/margin_container/scroll_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("1_dx8df")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][color=dark_orange]- Dedicated to my dad -[/color]
+
+[color=orange]Game developed by[/color]
+[url=https://www.moisesjose.com/]Moisés J. Bonilla Caraballo (moisesjbc)[/url]
+
+[color=orange]Third-party tools and fonts[/color]
+[url=https://godotengine.org]Godot engine[/url]
+[url=https://www.gimp.org/]Gimp[/url]
+[url=https://www.drpetter.se/project_sfxr.html]sfxr[/url]
+[url=https://design.ubuntu.com/font]Ubuntu font[/url]
+[url=https://coolors.co/]coolors[/url]
+
+[color=orange]Special thanks[/color]
+Family, friends and members
+from Canarias GameDev group for
+their support and feedback
+
+[color=orange]Game done for [url=https://ldjam.com/events/ludum-dare/58/]Ludum Dare #58[/url][/color]
+(Theme: \"Collector\")
+"
+
+[node name="main_menu_button" parent="margin_container/vbox_container" instance=ExtResource("2_8fsqj")]
+layout_mode = 2
+text = "Main menu"
+
+[connection signal="meta_clicked" from="margin_container/vbox_container/panel/margin_container/scroll_container/credits_text" to="." method="_on_credits_text_meta_clicked"]
+[connection signal="pressed" from="margin_container/vbox_container/main_menu_button" to="." method="_on_main_menu_button_pressed"]
